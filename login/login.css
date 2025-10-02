@@ -1,11 +1,15 @@
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Proza Libre', sans-serif;
     background: #222;
     color: #333;
 }
+
 .login-container {
     display: flex;
     width: 100%;
@@ -14,6 +18,7 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     min-height: 100vh;
 }
+
 .login-left {
     flex: 1;
     padding: 40px;
@@ -22,114 +27,157 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .login-left .logo {
     position: absolute;
     top: 20px;
     left: 25px;
     margin-bottom: 20px;
 }
-.login-left form,
-.login-left .extra-options {
-    max-width: 350px;
+
+.form-container {
+    background: #fff;
+    padding: 30px 25px;
+    margin-bottom: 10px;
+    max-width: 380px;
     width: 100%;
 }
+
 .login-left h2 {
     text-align: center;
-    margin-bottom: 15px;
-    font-size: 29px;
+    font-size: 26px;
     font-weight: 700;
     color: #1f412a;
-    margin-bottom: 50px;
+    margin-bottom: 28px;
 }
+
 .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     position: relative;
 }
+
 .form-group i {
     position: absolute;
-    top: 50%;
-    left: 20px;
+    top: 42%;
+    left: 12px;
     transform: translateY(-50%);
-    color: #666;
+    color: #3A653C;
     font-size: 16px;
 }
+
 .form-group input {
-    font-family: 'Proza Libre', sans-serif;
     width: 100%;
-    max-width: 350px;
     padding: 12px 12px 12px 40px;
-    border: 1.5px solid #1A1919;
-    border-radius: 6px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
     font-size: 14px;
-    box-shadow: 5px 5px 8px rgba(0, 55, 0, 1);
+    font-weight: 500;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
 }
+
+.form-group input:focus {
+    border-color: #3A653C;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(58, 101, 60, 0.2);
+}
+
 .btn {
+    font-size: 15px;
     width: 100%;
-    max-width: 350px;
     padding: 12px;
-    background: #2f7a57;
+    background: #3A653C;
     color: #fff;
     font-weight: 600;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     margin-top: 6px;
-    transition: background 0.3s ease;
+    transition: background 0.2s ease;
 }
-.btn:hover { background: #256448; }
+
+.btn:hover {
+    background: #328936;
+}
+
 .extra-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0 20px 0;
-    font-size: 13px;
+    margin: 15px 0;
+    font-size: 12px;
+    color: #444;
 }
+
 .extra-options label {
     display: flex;
     align-items: center;
     gap: 6px;
 }
+
+.extra-options a {
+    font-weight: 500;
+    color: #3A653C;
+    text-decoration: none;
+}
+
+.extra-options a:hover {
+    color: #2f7a57;
+    text-decoration: underline;
+}
+
 .social-login {
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 12px;
     margin: 20px 0;
+    width: 100%;
+    max-width: 380px;
 }
+
 .social-login button {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
     background: #fff;
-    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-weight: 600;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-.social-login button:hover { background: #f2f2f2; }
+
+.social-login button:hover {
+    background: #f8f8f8;
+    border-color: #bbb;
+}
+
 .signup {
     text-align: center;
     font-size: 14px;
 }
-.signup a { color: #2f7a57; text-decoration: none; font-weight: 600; }
-.signup a:hover { text-decoration: underline; }
+
+.signup a {
+    color: #2f7a57;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
 
 .login-right {
     flex: 1;
     background: url('/asset/side_login.jpg') center/cover no-repeat;
 }
 
-/* @media (max-width: 768px) {
-.login-container { flex-direction: column; }
-.login-right { height: 200px; }
-} */
-
 @media (max-width: 992px) {
-        .login-right {
-        display: none; /* sembunyikan gambar kanan */
+    .login-right {
+        display: none;
     }
 
     .login-left {
@@ -138,22 +186,25 @@ body {
     }
 
     .login-left .logo img {
-        width: 60px; /* perkecil logo */
+        width: 60px;
     }
 
     .login-left h2 {
-        font-size: 22px; /* judul ikut mengecil */
-        margin-bottom: 30px;
+        font-size: 22px;
+        margin-bottom: 24px;
     }
 
-    .form-group input, .btn {
-        max-width: 100%; /* biar full lebar HP */
+    .form-container, 
+    .form-group input, 
+    .btn, 
+    .social-login {
+        max-width: 100%;
     }
 }
 
 @media (max-width: 576px) {
     .login-left .logo img {
-        width: 45px; /* lebih kecil lagi di layar sangat kecil */
+        width: 45px;
     }
 
     .login-left h2 {
