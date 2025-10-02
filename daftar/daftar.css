@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Proza Libre', sans-serif;
+    background: #222;
+    color: #333;
+}
+
+.regist-container {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* sisi kiri fix penuh */
+.regist-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%; /* setengah layar */
+    height: 100vh;
+    background: url('/asset/side_login.jpg') center/cover no-repeat;
+}
+
+/* sisi kanan scrollable */
+.regist-right {
+    margin-left: 50%; /* geser ke kanan setengah layar */
+    width: 50%;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;   /* form bisa scroll */
+    position: relative;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+/* logo tetap di kanan atas */
+.regist-right .logo {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    /* z-index: 1000; */
+}
+
+.form-container {
+    background: #fff;
+    padding: 25px 20px;
+    margin: 50px 0 20px; /* kasih jarak biar tidak ketutup logo */
+    max-width: 380px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.regist-right h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f412a;
+    margin-bottom: 22px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.form-group i {
+    position: absolute;
+    top: 45%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #3A653C;
+    font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #3A653C;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(58, 101, 60, 0.2);
+}
+
+.btn {
+    font-size: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #3A653C;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: #328936;
+}
+
+.extra-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 12px;
+    color: #444;
+}
+
+.extra-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.extra-options a {
+    font-weight: 500;
+    color: #3A653C;
+    text-decoration: none;
+}
+
+.extra-options a:hover {
+    color: #2f7a57;
+    text-decoration: underline;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    width: 100%;
+    max-width: 380px;
+}
+
+.social-login button {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-login button:hover {
+    background: #f8f8f8;
+    border-color: #bbb;
+}
+
+.login {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.login a {
+    color: #2f7a57;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
+/* responsive */
+@media (max-width: 992px) {
+    .regist-left {
+        display: none;
+    }
+
+    .regist-right {
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 15px;
+    }
+
+    .regist-right .logo img {
+        width: 60px;
+    }
+
+    .regist-right h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .form-container, 
+    .form-group input, 
+    .btn, 
+    .social-login {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .regist-right .logo img {
+        width: 45px;
+    }
+
+    .regist-right h2 {
+        font-size: 18px;
+    }
+}
